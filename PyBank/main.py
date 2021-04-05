@@ -23,7 +23,7 @@ with open(csvpath) as csvfile:
         total_profit.append(int(row[1]))
         total_months = len(total_month)
         total_month_amount = sum(total_profit)
-        average = total_month_amount / total_months
+        average = float(total_month_amount / total_months)
     
     print("Financial Analysis")
     print("----------------------------")
@@ -44,3 +44,5 @@ with open(csvpath) as csvfile:
     print("Greatest Increase in Profits: " + (total_month[total_profit.index(max(total_profit))]) + " ($" +str(max(total_profit))+")")
     print("Greatest Decrease in Profits: " + (total_month[total_profit.index(min(total_profit))]) + " ($" +str(min(total_profit))+")")
     sys.stdout.close()
+
+    
