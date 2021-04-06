@@ -51,5 +51,4 @@ O'Tooley: 3.000% (105630)
 Winner: Khan
 -------------------------
 
-
 In addition, this script printa the analysis to the terminal and export a text file with the results.
