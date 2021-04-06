@@ -50,7 +50,7 @@ with open(csvpath) as csvfile:
 
     #Redirect Print to .txt
 
-    sys.stdout=open("main_output.txt","w")
+    sys.stdout=open("../analysis/main_output.txt","w")
     print("Election Results")
     print("-------------------------")
     print("Total Voters: " + str(len(total_voters)))

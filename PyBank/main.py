@@ -37,7 +37,7 @@ with open(csvpath) as csvfile:
 
     #Redirect Print to .txt
 
-    sys.stdout=open("main_output.txt","w")
+    sys.stdout=open("../analysis/main_output.txt","w")
     print("Financial Analysis")
     print("----------------------------")
     print("Total Months: " + str(len(total_month)))
