@@ -35,6 +35,9 @@ with open(csvpath) as csvfile:
     percentage = []
     candidates_dic = {"names": new_candidates, "votes": total_votes, "percentage": percentage}
 
+    #Redirect Print to .txt
+    
+    sys.stdout=open("../analysis/main_output.txt","w")
     print("Election Results")
     print("-------------------------")
     print("Total Voters: " + str(len(total_voters)))
@@ -45,22 +48,6 @@ with open(csvpath) as csvfile:
         candidates_dic ["percentage"] = str(round(candidates_dic ["votes"]*100/(len(total_voters)),2))
         print(f'{candidates_dic["names"]}: {candidates_dic["percentage"]}% ({candidates_dic["votes"]})')
     print("-------------------------")
-    print("Winner:"+ candidates_dic["names"] + " " + max(candidates_dic["percentage"])) 
-    print("-------------------------")
-
-    #Redirect Print to .txt
-
-    sys.stdout=open("../analysis/main_output.txt","w")
-    print("Election Results")
-    print("-------------------------")
-    print("Total Voters: " + str(len(total_voters)))
-    print("-------------------------")
-    for i in range(total_candidates):
-        candidates_dic ["names"]= new_candidates[i]
-        candidates_dic ["votes"]= candidates.count(new_candidates[i])
-        candidates_dic ["percentage"] = str(round(candidates_dic ["votes"]*100/(len(total_voters)),2))
-        print(f'{candidates_dic["names"]}: {candidates_dic["percentage"]}% ({candidates_dic["votes"]})')
-    print("-------------------------")
-    print("Winner:"+ candidates_dic["names"] + max(candidates_dic["percentage"])) 
+    print("Winner:" + candidates_dic["names"] + " " + max(candidates_dic["percentage"])) 
     print("-------------------------")
     sys.stdout.close()
