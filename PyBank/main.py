@@ -27,12 +27,10 @@ with open(csvpath) as csvfile:
         total_months = len(total_month)
         total_month_amount = sum(total_profit)
     
-    #average = float(total_month_amount / total_months)
-    
+
     for i in range(len(total_profit)-1):
         change.append(total_profit[i+1] - total_profit[i])
     
- 
     print("Financial Analysis")
     print("----------------------------")
     print("Total Months: " + str(len(total_month)))
