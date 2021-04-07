@@ -38,9 +38,9 @@ with open(csvpath) as csvfile:
     print("Total Months: " + str(len(total_month)))
     print("Total: $" + str(sum(total_profit)))
     print("Average Change: $" + str(round(sum(change)/len(change),2)))
-    print("Greatest Increase in Profits: " + (total_month[total_profit.index(max(total_profit))]) + " ($" +str(max(change))+")")
-    print("Greatest Decrease in Profits: " + (total_month[total_profit.index(min(total_profit))]) + " ($" +str(min(change))+")")
-    
+    print("Greatest Increase in Profits: " + (total_month[change.index(max(change))+1]) + " ($" +str(max(change))+")")
+    print("Greatest Increase in Profits: " + (total_month[change.index(min(change))+1]) + " ($" +str(min(change))+")")
+
     #Redirect Print to .txt
 
     sys.stdout=open("../analysis/main_output.txt","w")
@@ -49,7 +49,6 @@ with open(csvpath) as csvfile:
     print("Total Months: " + str(len(total_month)))
     print("Total: $" + str(sum(total_profit)))
     print("Average Change: $" + str(round(sum(change)/len(change),2)))
-    print("Greatest Increase in Profits: " + (total_month[total_profit.index(max(total_profit))]) + " ($" +str(max(change))+")")
-    print("Greatest Decrease in Profits: " + (total_month[total_profit.index(min(total_profit))]) + " ($" +str(min(change))+")")
-       
+    print("Greatest Increase in Profits: " + (total_month[change.index(max(change))+1]) + " ($" +str(max(change))+")")
+    print("Greatest Increase in Profits: " + (total_month[change.index(min(change))+1]) + " ($" +str(min(change))+")")
     sys.stdout.close()
