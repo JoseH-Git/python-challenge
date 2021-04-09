@@ -37,6 +37,20 @@ with open(csvpath) as csvfile:
 
     #Redirect Print to .txt
     
+    print("Election Results")
+    print("-------------------------")
+    print("Total Voters: " + str(len(total_voters)))
+    print("-------------------------")
+    for i in range(total_candidates):
+        candidates_dic ["names"] = new_candidates[i]
+        candidates_dic ["votes"] = candidates.count(new_candidates[i])
+        candidates_dic ["percentage"] = str(round(candidates_dic ["votes"]*100/(len(total_voters)),2))
+        print(f'{candidates_dic["names"]}: {candidates_dic["percentage"]}% ({candidates_dic["votes"]})')
+    print("-------------------------")
+    print("Winner:" + candidates_dic["names"] + " " + max(candidates_dic["percentage"])) 
+    print("-------------------------")
+    sys.stdout.close()
+
     sys.stdout=open("../analysis/main_output.txt","w")
     print("Election Results")
     print("-------------------------")
