@@ -16,7 +16,7 @@ As an example, the analysis should look similar to the one below:
 
 ![image](https://user-images.githubusercontent.com/80076539/114471601-843ee680-9bb6-11eb-9a1d-aceb41e7f585.png)
 
-In addition, this script print the analysis to the terminal and export a text file with the results.
+In addition, this script prints the analysis to the terminal and export a text file with the results.
 
 **PyPoll**
 
@@ -34,4 +34,4 @@ As an example, the analysis should look similar to the one below:
 
 ![image](https://user-images.githubusercontent.com/80076539/114471502-63769100-9bb6-11eb-9ea2-012cb57a71fd.png)
 
-In addition, this script printa the analysis to the terminal and export a text file with the results.
+In addition, this script prints the analysis to the terminal and export a text file with the results.
