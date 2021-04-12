@@ -14,14 +14,7 @@ Your task is to create a Python script that analyzes the records to calculate ea
 
 As an example, the analysis should look similar to the one below:
 
-Financial Analysis
-
-----------------------------
-Total Months: 86
-Total: $38382578
-Average  Change: $-2315.12
-Greatest Increase in Profits: Feb-2012 ($1926159)
-Greatest Decrease in Profits: Sep-2013 ($-2196167)
+![image](https://user-images.githubusercontent.com/80076539/114471601-843ee680-9bb6-11eb-9a1d-aceb41e7f585.png)
 
 In addition, this script print the analysis to the terminal and export a text file with the results.
 
