@@ -8,7 +8,7 @@ import sys
 
 total_voters = []
 candidates = []
-
+winner = []
 # Set path for file
 csvpath = os.path.join("..", "Resources", "election_data.csv")
 
@@ -32,36 +32,38 @@ with open(csvpath) as csvfile:
     new_candidates = list(set(candidates))
     total_candidates = len(new_candidates)
     total_votes = []
-    percentage = []
-    candidates_dic = {"names": new_candidates, "votes": total_votes, "percentage": percentage}
+    candidates_dic = {"names": [] , "votes": [], "percentage": []}
 
-    #Redirect Print to .txt
-    
     print("Election Results")
     print("-------------------------")
     print("Total Voters: " + str(len(total_voters)))
     print("-------------------------")
     for i in range(total_candidates):
-        candidates_dic ["names"] = new_candidates[i]
-        candidates_dic ["votes"] = candidates.count(new_candidates[i])
-        candidates_dic ["percentage"] = str(round(candidates_dic ["votes"]*100/(len(total_voters)),2))
-        print(f'{candidates_dic["names"]}: {candidates_dic["percentage"]}% ({candidates_dic["votes"]})')
+        candidates_dic ["names"].append(new_candidates[i])
+        candidates_dic ["votes"].append(candidates.count(new_candidates[i]))
+        candidates_dic ["percentage"].append(str(round(candidates_dic["votes"][i]*100/(len(total_voters)),2)))
+        print(f'{candidates_dic["names"][i]}: {candidates_dic["percentage"][i]}% ({candidates_dic["votes"][i]})')
     print("-------------------------")
-    print("Winner:" + candidates_dic["names"] + " " + max(candidates_dic["percentage"])) 
+    for i in range(total_candidates):
+        if float(candidates_dic["percentage"][i]) == float(max(candidates_dic["percentage"])):
+                print("Winner: " + candidates_dic["names"][i])
     print("-------------------------")
-    sys.stdout.close()
 
+    #Redirect Print to .txt
+    
     sys.stdout=open("../analysis/main_output.txt","w")
     print("Election Results")
     print("-------------------------")
     print("Total Voters: " + str(len(total_voters)))
     print("-------------------------")
     for i in range(total_candidates):
-        candidates_dic ["names"] = new_candidates[i]
-        candidates_dic ["votes"] = candidates.count(new_candidates[i])
-        candidates_dic ["percentage"] = str(round(candidates_dic ["votes"]*100/(len(total_voters)),2))
-        print(f'{candidates_dic["names"]}: {candidates_dic["percentage"]}% ({candidates_dic["votes"]})')
+        candidates_dic ["names"].append(new_candidates[i])
+        candidates_dic ["votes"].append(candidates.count(new_candidates[i]))
+        candidates_dic ["percentage"].append(str(round(candidates_dic["votes"][i]*100/(len(total_voters)),2)))
+        print(f'{candidates_dic["names"][i]}: {candidates_dic["percentage"][i]}% ({candidates_dic["votes"][i]})')
     print("-------------------------")
-    print("Winner:" + candidates_dic["names"] + " " + max(candidates_dic["percentage"])) 
+    for i in range(total_candidates):
+        if float(candidates_dic["percentage"][i]) == float(max(candidates_dic["percentage"])):
+                print("Winner: " + candidates_dic["names"][i])
     print("-------------------------")
     sys.stdout.close()
